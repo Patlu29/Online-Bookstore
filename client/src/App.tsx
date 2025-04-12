@@ -1,12 +1,15 @@
-
+import { Outlet } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import './styles/index.css'
 function App() {
 
   return (
     <>
-    <p>
-
-Hello world
-    </p>
+    {<Navbar/  >}
+    <main className="main">
+    <Outlet />
+    </main>
+    <footer>footer</footer>
     </>
   )
 }
