@@ -10,7 +10,7 @@ const Navbar = () => {
     navigate('/login')
   }
   const authorRegister = () => {
-    navigate('/authorRegister')
+    navigate('/authorregister')
   }
 
 
@@ -30,7 +30,7 @@ const Navbar = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-dark" type="submit">
+            <button className="btn btn-outline-dark" type="submit" onClick={() => {navigate('/publishbook')}}>
               Search
             </button>
           </form>

@@ -15,7 +15,7 @@ const AdminCard = () => {
             <h5 className="card-title">Manage Books</h5>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div className="col-sm-4">
         <div className="card">
           <div className="card-body">

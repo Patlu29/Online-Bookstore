@@ -1,0 +1,253 @@
+[
+  {
+    "id": 1,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "genre": "Thriller",
+    "price": 399,
+    "year": 2019,
+    "description": "A psychological thriller about a woman's act of violence against her husband—and the therapist obsessed with uncovering her motive.",
+    "image": "https://covers.openlibrary.org/b/isbn/9781250301697-L.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-help",
+    "price": 499,
+    "year": 2018,
+    "description": "An easy & proven way to build good habits and break bad ones.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Where the Crawdads Sing",
+    "author": "Delia Owens",
+    "genre": "Fiction",
+    "price": 349,
+    "year": 2018,
+    "description": "A coming-of-age story of a young girl raised in the marshes of North Carolina.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780735219090-L.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genre": "Memoir",
+    "price": 425,
+    "year": 2018,
+    "description": "A memoir about a woman who was kept out of school and leaves her survivalist family to earn a PhD from Cambridge University.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Adventure",
+    "price": 299,
+    "year": 1988,
+    "description": "A philosophical book about a shepherd's journey to find treasure and his destiny.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg"
+  },
+  {
+    "id": 6,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "price": 275,
+    "year": 1949,
+    "description": "A dystopian social science fiction novel and cautionary tale about the future.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+  },
+  {
+    "id": 7,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classic",
+    "price": 310,
+    "year": 1960,
+    "description": "A novel about the serious issues of rape and racial inequality.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780060935467-L.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "genre": "Finance",
+    "price": 350,
+    "year": 1997,
+    "description": "A personal finance book teaching how to become financially independent.",
+    "image": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "genre": "Self-help",
+    "price": 399,
+    "year": 2016,
+    "description": "A counterintuitive approach to living a good life.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780062457714-L.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "price": 450,
+    "year": 1997,
+    "description": "The first book in the beloved Harry Potter series.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genre": "Science Fiction",
+    "price": 499,
+    "year": 1965,
+    "description": "A science fiction epic that explores politics, religion, and ecology on the desert planet Arrakis.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Ender's Game",
+    "author": "Orson Scott Card",
+    "genre": "Science Fiction",
+    "price": 399,
+    "year": 1985,
+    "description": "A young boy is trained through games to become humanity's last hope against an alien threat.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780812550702-L.jpg"
+  },
+  {
+    "id": 13,
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "genre": "Science Fiction",
+    "price": 429,
+    "year": 2011,
+    "description": "An astronaut stranded on Mars uses his ingenuity to survive until rescue.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Neuromancer",
+    "author": "William Gibson",
+    "genre": "Science Fiction",
+    "price": 370,
+    "year": 1984,
+    "description": "A cyberpunk classic about hackers, artificial intelligence, and dystopian corporations.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780441569595-L.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "genre": "Science Fiction",
+    "price": 515,
+    "year": 2021,
+    "description": "A lone astronaut must save humanity after waking up in space with no memory.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Snow Crash",
+    "author": "Neal Stephenson",
+    "genre": "Science Fiction",
+    "price": 389,
+    "year": 1992,
+    "description": "A samurai-sword-wielding hacker discovers a digital virus with real-world consequences.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780553380958-L.jpg"
+  },
+  {
+    "id": 17,
+    "title": "The Left Hand of Darkness",
+    "author": "Ursula K. Le Guin",
+    "genre": "Science Fiction",
+    "price": 340,
+    "year": 1969,
+    "description": "An envoy to a strange planet must navigate politics, gender, and loyalty.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780441478125-L.jpg"
+  },
+  {
+    "id": 18,
+    "title": "Hyperion",
+    "author": "Dan Simmons",
+    "genre": "Science Fiction",
+    "price": 460,
+    "year": 1989,
+    "description": "Seven pilgrims journey through time and space to a mysterious and deadly world.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780553283686-L.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Ready Player One",
+    "author": "Ernest Cline",
+    "genre": "Science Fiction",
+    "price": 399,
+    "year": 2011,
+    "description": "A teen in a dystopian future joins a high-stakes VR treasure hunt filled with 80s nostalgia.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Foundation",
+    "author": "Isaac Asimov",
+    "genre": "Science Fiction",
+    "price": 385,
+    "year": 1951,
+    "description": "A mathematician predicts the fall of the Galactic Empire and works to preserve knowledge.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780553293357-L.jpg"
+  },
+
+  {
+    "id": 26,
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "genre": "Self-Improvement",
+    "price": 420,
+    "year": 2018,
+    "description": "A Navy SEAL’s journey from trauma and poverty to mental toughness and success.",
+    "image": "https://covers.openlibrary.org/b/isbn/9781544512280-L.jpg"
+  },
+  {
+    "id": 27,
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "genre": "Self-Improvement",
+    "price": 375,
+    "year": 2016,
+    "description": "How to focus without distraction on cognitively demanding tasks.",
+    "image": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg"
+  },
+  {
+    "id": 28,
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "genre": "Self-Improvement",
+    "price": 430,
+    "year": 1989,
+    "description": "A principle-centered approach for solving personal and professional problems.",
+    "image": "https://covers.openlibrary.org/b/isbn/9780743269513-L.jpg"
+  },
+  {
+    "id": 29,
+    "title": "Make Your Bed",
+    "author": "Admiral William H. McRaven",
+    "genre": "Self-Improvement",
+    "price": 250,
+    "year": 2017,
+    "description": "Simple lessons from Navy SEAL training that can change your life.",
+    "image": "https://covers.openlibrary.org/b/isbn/9781455570249-L.jpg"
+  },
+  {
+    "id": 30,
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "genre": "Self-Improvement",
+    "price": 360,
+    "year": 2016,
+    "description": "Why mastering humility and self-awareness is key to success.",
+    "image": "https://covers.openlibrary.org/b/isbn/9781591847816-L.jpg"
+  }
+]
