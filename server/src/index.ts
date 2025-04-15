@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 
-app.use("/book", router);
+app.use("/books", router);
 
 app.get("/", (req: Request, res: Response) => {
   console.log("checking");

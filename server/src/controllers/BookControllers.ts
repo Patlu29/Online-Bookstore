@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { AllBooks, BooksByGenre } from "../services/Books";
+import { AllBooks, BookByTitle, BooksByGenre } from "../services/Books";
 
 
 export class BookController {
@@ -24,4 +24,16 @@ async GetByGenre (req: Request, res: Response, next: NextFunction) {
     }
 }
 
+    // get by title
+async GetByTitle (req: Request, res: Response, next: NextFunction) {
+    try {
+        const title = req.params.title
+        console.log(title);
+        
+        const bookData = await BookByTitle(title)
+        res.status(200).json({data: bookData})
+    }catch(e) {
+        res.status(500).json({e})
+    }
+}
 }

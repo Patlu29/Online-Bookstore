@@ -6,3 +6,4 @@ const BookControl = new BookController()
 
 router.get('/allbooks', BookControl.GetAllBooks)
 router.get('/:genre', BookControl.GetByGenre)
+router.get('/book/:title', BookControl.GetByTitle)
