@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BookCard from "../../components/BookCard";
+import Rating from "../Rating & Reviews/Rating";
 
 interface Book {
   title: string;
@@ -35,6 +36,7 @@ const BooksCards = () => {
   };
 
   return (
+    <>
     <div className="d-flex flex-wrap gap-3 justify-content-center">
       {data.slice(0, 10).map((book) => (
         <BookCard
@@ -49,6 +51,7 @@ const BooksCards = () => {
         />
       ))}
     </div>
+    </>
   );
 };
 

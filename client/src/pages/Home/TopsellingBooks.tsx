@@ -44,24 +44,16 @@ const TopSelling = () => {
   return (
     <div className="p-3">
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h4>Top Selling</h4>
+        <h3>Top Selling :-</h3>
         <button className="btn btn-outline-primary btn-sm" onClick={refreshBooks}>
           Refresh
         </button>
       </div>
 
-      <div className="d-flex overflow-auto gap-3" style={{ }}>
+      <div className="d-flex overflow-auto gap-3 align-items-stretch">
         {randomBooks.map((book) => (
-          <div style={{ flex: "0 0 auto", }} key={book.title} className="">
-            <BookCard
-              title={book.title}
-              author={book.author}
-              genre={book.genre}
-              price={book.price}
-              year={book.year}
-              description={book.description}
-              image={book.image}
-            />
+          <div key={book.title} style={{ flex: "0 0 auto", width: "240px" }}>
+            <BookCard {...book} />
           </div>
         ))}
       </div>

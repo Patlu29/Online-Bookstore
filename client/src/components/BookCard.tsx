@@ -1,4 +1,4 @@
-
+import Rating from "../pages/Rating & Reviews/Rating";
 
 interface BookProps {
   title: string;
@@ -20,8 +20,11 @@ const BookCard = ({
   image,
 }: BookProps) => {
   return (
-    <div className="card cursor-pointer" style={{ width: "15rem", height: 'auto'}} >
-      <div className="d-flex justify-content-center p-2">
+    <div
+      className="card h-100 d-flex flex-column shadow-sm"
+      style={{ width: "100%", minWidth: "220px", maxWidth: "250px" }}
+    >
+      <div className="d-flex justify-content-center p-3">
         <img
           src={image}
           className="card-img-top"
@@ -30,18 +33,26 @@ const BookCard = ({
         />
       </div>
 
-      <h5 className="card-title text-center px-2">
-        <b>{title}</b> <br />
-        <small>by <b>{author}</b>({year})</small>
-      </h5>
+      <div className="px-3 text-center">
+        <h6 className="fw-bold">{title}</h6>
+        <small className="text-muted">
+          by <b>{author}</b> ({year})
+        </small>
+      </div>
 
-      <div className="card-body">
-        <h6 className="card-title">Genre: {genre}</h6>
-        <h6 className="card-title">Price: ₹{price}</h6>
-        <p className="card-text"><b>{description}</b></p>
+      <div className="card-body d-flex flex-column">
+        <h6 className="mb-1">Genre: <span className="text-secondary">{genre}</span></h6>
+        <h6 className="mb-2">Price: ₹{price}</h6>
+        <p className="card-text small text-muted flex-grow-1" style={{ overflow: "hidden", textOverflow: "ellipsis", maxHeight: "3.6em", lineHeight: "1.2em" }}>
+          {description}
+        </p>
+
+        <div className="mt-2">
+          <Rating />
+        </div>
       </div>
     </div>
   );
 };
 
-export default BookCard
+export default BookCard;
