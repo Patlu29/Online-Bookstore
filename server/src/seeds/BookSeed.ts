@@ -17,8 +17,7 @@ interface BookData {
 
 async function BookAPIFetch() {
   try {
-    const API_KEY = "AIzaSyB_L6D8dN8KMSD3ugVOCVoYM9M6ratAIeY";
-    const URL = `https://www.googleapis.com/books/v1/volumes?q=subject:Fairytale&key=${API_KEY}`;
+    const URL = `https://www.googleapis.com/books/v1/volumes?q=subject:Fairytale&key=${process.env.GOOGLE_BOOKS_API}`;
 
     const response = await axios.get(URL);
 
