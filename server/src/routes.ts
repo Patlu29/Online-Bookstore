@@ -5,4 +5,4 @@ export const router = Router()
 const BookControl = new BookController()
 
 router.get('/allbooks', BookControl.GetAllBooks)
-router.get('/books/:genre', BookControl.GetByGenre)
+router.get('/:genre', BookControl.GetByGenre)
