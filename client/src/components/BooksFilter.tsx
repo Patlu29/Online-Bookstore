@@ -6,7 +6,7 @@ type BooksFilterProps = {
 
 const BooksFilter = ({ onFilterChange }: BooksFilterProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedFilter, setSelectedFilter] = useState("All Books");
+  const [selectedFilter, setSelectedFilter] = useState("AllBooks");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const BooksFilter = ({ onFilterChange }: BooksFilterProps) => {
         </button>
         <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
           {[
-            "All Books",
+            "AllBooks",
             "Fiction",
             "Drama",
             "Science",

@@ -1,13 +1,13 @@
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
-const Rating = () => {
+const Rating = (count: {star: number, count: number}) => {
   const colors = {
     orange: "#F2C265",
     grey: "#a9a9a9",
   };
 
   const stars = Array(5).fill(0);
-  const rating = 4.5;
+  const rating = count.star;
 
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
@@ -27,7 +27,7 @@ const Rating = () => {
           </span>
         );
       })}
-      <span style={{ marginLeft: "5px", fontSize: "14px" }}>({rating} Stars)</span>
+      <span style={{ marginLeft: "5px", fontSize: "14px" }}>({count.count})</span>
     </div>
   );
 };

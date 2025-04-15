@@ -48,7 +48,7 @@ const BookCard = ({
         </p>
 
         <div className="mt-2">
-          <Rating />
+          <Rating count={33} star={3.5}/>
         </div>
       </div>
     </div>
