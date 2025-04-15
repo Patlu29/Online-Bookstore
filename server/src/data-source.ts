@@ -19,6 +19,4 @@ export const AppDataSource = new DataSource({
   migrations: [`${process.cwd()}/src/migration/*.ts`],
   // @ts-ignore
   seeds: [`${process.cwd()}/src/seeds/*.ts`],
-  // @ts-ignore
-  factories: [`${process.cwd()}/src/factory/*.ts`],
 });

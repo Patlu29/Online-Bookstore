@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 import { AppDataSource } from "../data-source";
 import axios from "axios";
 
-dotenv.config();
+// dotenv.config();
 
 interface BookData {
   title: string;
@@ -17,7 +17,7 @@ interface BookData {
 
 async function BookAPIFetch() {
   try {
-    const URL = `https://www.googleapis.com/books/v1/volumes?q=subject:Fairytale&key=${process.env.GOOGLE_BOOKS_API}`;
+    const URL = `https://www.googleapis.com/books/v1/volumes?q=subject:programming&key=${process.env.GOOGLE_BOOKS_API}`;
 
     const response = await axios.get(URL);
 
@@ -39,7 +39,7 @@ async function BookAPIFetch() {
           published_at: volume.publishedDate || "Unknown Date",
         };
       });
-      
+      await AppDataSource.initialize()
       const repo = AppDataSource.getRepository(Book)
       repo.insert(books)
     

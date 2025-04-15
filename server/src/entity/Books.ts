@@ -23,6 +23,12 @@ export class Book {
   @Column({ nullable: true })
   image_url: string;
 
+  @Column()
+  star_rating: number
+
+  @Column()
+  rating_count: string
+
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 }
