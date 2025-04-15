@@ -1,7 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 
-const BooksFilter = () => {
+type BooksFilterProps = {
+  onFilterChange: (filter: string) => void;
+};
+
+const BooksFilter = ({ onFilterChange }: BooksFilterProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("All Books");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,6 +21,13 @@ const BooksFilter = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleFilterSelect = (filter: string) => {
+    setSelectedFilter(filter);
+    setDropdownOpen(false);
+    onFilterChange(filter);
+  };
+
   return (
     <div>
       <div className="dropdown" ref={dropdownRef}>
@@ -26,24 +38,26 @@ const BooksFilter = () => {
           type="button"
           aria-expanded={dropdownOpen}
         >
-          Categories
+          {selectedFilter}
         </button>
         <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
-          <li>
-            <a className="dropdown-item" href="#">
-              Tech
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Books
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Clothing
-            </a>
-          </li>
+          {[
+            "All Books",
+            "Fiction",
+            "Drama",
+            "Science",
+            "computers",
+            "History",
+          ].map((filter) => (
+            <li key={filter}>
+              <button
+                className="dropdown-item"
+                onClick={() => handleFilterSelect(filter)}
+              >
+                {filter}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
