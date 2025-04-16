@@ -5,15 +5,15 @@ import axios from "axios";
 const AuthorRegister = () => {
   const [authorName, setAuthorName] = useState("");
   const [email, setEmail] = useState("");
-  const [genre, setGenre] = useState("");
+  // const [genre, setGenre] = useState("");
   const [password, setPassword] = useState("");
-  const [bio, setBio] = useState("");
+  // const [bio, setBio] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
-
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+e.preventDefault()
     if (!authorName || !email || !password) {
       setError("Name, email and password are required.");
       return;
@@ -26,18 +26,18 @@ const AuthorRegister = () => {
     }
 
     try {
-      await axios.post("http://localhost:3900/auth/author/register", {
+      await axios.post("http://localhost:3900/author/register", {
         authorName,
         email,
-        genre,
+        // genre,
         password,
-        bio
+        // bio
       });
 
       setSuccess("Author registered successfully!");
       setError("");
       setTimeout(() => {
-        navigate("/login");
+        navigate("/publishbook");
         alert("Author successfully registered");
       }, 1000);
     } catch (err) {
@@ -78,7 +78,7 @@ const AuthorRegister = () => {
           />
         </div>
 
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <label className="form-label">Genre (optional)</label>
           <input
             type="text"
@@ -87,9 +87,9 @@ const AuthorRegister = () => {
             value={genre}
             onChange={(e) => setGenre(e.target.value)}
           />
-        </div>
+        </div> */}
 
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <label className="form-label">Short Bio (optional)</label>
           <textarea
             className="form-control"
@@ -98,7 +98,7 @@ const AuthorRegister = () => {
             value={bio}
             onChange={(e) => setBio(e.target.value)}
           ></textarea>
-        </div>
+        </div> */}
 
         <div className="mb-3">
           <label className="form-label">Password</label>

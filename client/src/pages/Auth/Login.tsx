@@ -23,7 +23,6 @@ const Login = () => {
     console.log(error);
 
     try {
-      console.log("hii");
       const loginResponse = await axios.post(
         "http://localhost:3900/user/login",
         { email: email, password: password }
@@ -34,6 +33,8 @@ const Login = () => {
 
       localStorage.setItem("token", token.token);
       navigate("/");
+      window.location.reload()
+      
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An error occurred during login."

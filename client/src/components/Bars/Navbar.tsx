@@ -6,12 +6,26 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false)
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token);
-  }, []);
+  
+useEffect(() => {
+  
+  const token = localStorage.getItem('token');
+  console.log(" im token", token);
+  if (token) {
+    
+    setIsLoggedIn(true);
 
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      if (payload.role === "admin") {
+        setIsAdmin(true);
+      }
+  }
+}, [isAdmin, isLoggedIn]);
+
+
+  
 
   return (
     <nav className="navbar bg-light border-bottom px-4 py-3 w-100">
@@ -40,18 +54,19 @@ const Navbar = () => {
           </form>
         </div>
         <div className="d-flex align-items-center gap-3">
-          <button
+          {isAdmin?           <button
             className="btn btn-outline-dark"
             onClick={() => {
               navigate("/admin-management");
             }}
           >
             Admin Panel
-          </button>
+          </button> : ""}
+
           <button
             className="btn btn-outline-dark"
             onClick={() => {
-              navigate("/authorregister");
+              navigate('/authorlogin')
             }}
           >
             Publish Book

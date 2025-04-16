@@ -8,8 +8,8 @@ const AuthorLogin = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
-
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+e.preventDefault()
     if (!email || !password) {
       setError("Please fill in both email and password.");
       return;
@@ -23,7 +23,7 @@ const AuthorLogin = () => {
 
     try {
       const loginResponse = await axios.post(
-        "http://localhost:3900/auth/author/login",
+        "http://localhost:3900/author/login",
         { email, password },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -32,7 +32,7 @@ const AuthorLogin = () => {
       console.log(token);
 
       localStorage.setItem("token", token.token);
-      navigate("/author/dashboard"); // Redirect to author dashboard
+      navigate("/profile");
     } catch (err) {
       setError(
         err instanceof Error
