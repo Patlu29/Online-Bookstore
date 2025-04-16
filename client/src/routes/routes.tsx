@@ -12,6 +12,7 @@ import MyReviews from "../pages/User/MyReviews";
 import AdminMangement from "../pages/Admin/AdminMangement";
 import PublishBookForm from "../pages/Author/PublishBook";
 import Book from "../pages/Books/Book";
+import OrderPage from "../pages/order/OrderPage";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/book",
-        element: <Book />
+        element: <Book />,
       },
       {
         path: "/books",
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/publishbook",
         element: <PublishBookForm />,
+      },
+      {
+        path: "/orderbook",
+        element: <OrderPage />,
       },
     ],
   },

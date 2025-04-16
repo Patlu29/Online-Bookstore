@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import Rating from "../Reviews/Rating";
 import { useNavigate } from "react-router-dom";
 
-
 interface Books {
-  id: number
+  id: number;
   title: string;
   author: string;
   genre: string;
@@ -17,14 +16,14 @@ interface Books {
 }
 
 const ExploreBookCard = (filter: { filter: string }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [bookData, setBookData] = useState<Books[]>([]);
 
   const handleClick = (event: any) => {
-    const title = event.currentTarget.getAttribute("value")
+    const title = event.currentTarget.getAttribute("data-value");
     console.log(title);
-    navigate("/book", {state: {title}})
-  }
+    navigate("/book", { state: { title } });
+  };
 
   useEffect(() => {
     GetBooks();
@@ -45,7 +44,7 @@ const ExploreBookCard = (filter: { filter: string }) => {
           description: bookData.description,
           image_url: bookData.image_url,
           star_rating: bookData.star_rating,
-          rating_count: bookData.rating_count
+          rating_count: bookData.rating_count,
         }));
         setBookData(filteredData);
         console.log(filteredData);
@@ -55,9 +54,18 @@ const ExploreBookCard = (filter: { filter: string }) => {
   return (
     <div className="row gap-3">
       {bookData.map((book, index) => (
-        <div className="card mb-3 p-3" style={{ maxWidth: "540px" }} key={index}>
+        <div
+          className="card mb-3 p-3"
+          style={{ maxWidth: "540px" }}
+          key={index}
+        >
           <div className="row g-3">
-            <div className="col-md-4">
+            <div
+              className="col-md-4"
+              style={{ cursor: "pointer" }}
+              data-value={book.title}
+              onClick={handleClick}
+            >
               <img
                 src={book.image_url}
                 className="img-fluid rounded-start"
@@ -70,11 +78,19 @@ const ExploreBookCard = (filter: { filter: string }) => {
                   <b>{book.title}</b>
                 </h5>
                 <p className="card-text">
-                  {book.author} | {book.genre} <br /> Price: ₹<b>{book.price}</b>
+                  {book.author} | {book.genre} <br /> Price: ₹
+                  <b>{book.price}</b>
                 </p>
-                <Rating star={book.star_rating} count={book.rating_count}/>
+                <Rating star={book.star_rating} count={book.rating_count} />
               </div>
-              <button className="btn btn-outline-dark" value={book.title} onClick={handleClick}>Buy Now</button>
+              <button
+                className="btn btn-outline-dark"
+                onClick={() => {
+                  navigate("/orderbook");
+                }}
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         </div>

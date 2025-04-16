@@ -41,14 +41,24 @@ const BookCard = ({
       </div>
 
       <div className="card-body d-flex flex-column">
-        <h6 className="mb-1">Genre: <span className="text-secondary">{genre}</span></h6>
+        <h6 className="mb-1">
+          Genre: <span className="text-secondary">{genre}</span>
+        </h6>
         <h6 className="mb-2">Price: ₹{price}</h6>
-        <p className="card-text small text-muted flex-grow-1" style={{ overflow: "hidden", textOverflow: "ellipsis", maxHeight: "3.6em", lineHeight: "1.2em" }}>
+        <p
+          className="card-text small text-muted flex-grow-1"
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            maxHeight: "3.6em",
+            lineHeight: "1.2em",
+          }}
+        >
           {description}
         </p>
 
         <div className="mt-2">
-          <Rating count={33} star={3.5}/>
+          <Rating count={33} star={3.5} />
         </div>
       </div>
     </div>
