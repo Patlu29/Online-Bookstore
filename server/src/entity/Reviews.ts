@@ -7,11 +7,11 @@ export class Review {
   @PrimaryGeneratedColumn()
   review_id: number;
 
-  @ManyToOne(() => Book, book => book.book_id)
-  book_id: Book;
+  @ManyToOne(() => Book, book => book.reviews, { onDelete: 'CASCADE' })
+  book: Book;
 
-  @ManyToOne(() => User, user => user.user_id)
-  user_id: User;
+  @ManyToOne(() => User, user => user.reviews, { onDelete: 'CASCADE' })
+  user: User;
 
   @Column()
   rating: number;
