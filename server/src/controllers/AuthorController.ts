@@ -46,7 +46,7 @@ export const AuthorLogin = async (req: Request, res: Response): Promise<void> =>
     }
 
     const token = jwt.sign(
-      { email: user.email, role: user.role },
+      { email: user.email,userName: user.userName, role: user.role },
       process.env.SECRET_KEY as string,
       { expiresIn: "1h" }
     );
