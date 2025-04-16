@@ -1,4 +1,4 @@
-import Rating from "../pages/Rating & Reviews/Rating";
+import Rating from "../Rating";
 
 interface BookProps {
   title: string;

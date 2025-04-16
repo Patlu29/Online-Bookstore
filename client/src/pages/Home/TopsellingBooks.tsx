@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BookCard from "../../components/BookCard";
+import BookCard from "../../components/Cards/BookCard";
 
 interface Book {
   title: string;

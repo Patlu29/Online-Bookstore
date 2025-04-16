@@ -1,6 +1,6 @@
 import { useState } from "react";
 import BooksFilter from "../../components/BooksFilter";
-import ExploreBookCard from "../../components/ExploreBookCard";
+import ExploreBookCard from "../../components/Cards/ExploreBookCard";
 
 const BooksList = () => {
   const [selectedFilter, setSelectedFilter] = useState("AllBooks");

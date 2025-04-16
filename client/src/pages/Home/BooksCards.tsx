@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import BookCard from "../../components/BookCard";
-import Rating from "../Rating & Reviews/Rating";
+import BookCard from "../../components/Cards/BookCard";
+import Rating from "../../components/Rating";
 
 interface Book {
   title: string;

@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import profile from '../assets/images/profile.svg'
+import profile from '../../assets/images/profile.svg'
 
 const Navbar = () => {
 

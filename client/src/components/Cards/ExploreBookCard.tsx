@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Rating from "../pages/Rating & Reviews/Rating";
+import Rating from "../Rating";
+import { useNavigate } from "react-router-dom";
+
 
 interface Books {
+  id: number
   title: string;
   author: string;
   genre: string;
   price: number | string;
-  year: number | string;
   description: string;
   image_url: string;
   star_rating: number;
@@ -15,7 +17,14 @@ interface Books {
 }
 
 const ExploreBookCard = (filter: { filter: string }) => {
+  const navigate = useNavigate()
   const [bookData, setBookData] = useState<Books[]>([]);
+
+  const handleClick = (event: any) => {
+    const title = event.currentTarget.getAttribute("value")
+    console.log(title);
+    navigate("/book", {state: {title}})
+  }
 
   useEffect(() => {
     GetBooks();
@@ -23,11 +32,12 @@ const ExploreBookCard = (filter: { filter: string }) => {
 
   const GetBooks = () => {
     axios
-      .get(`http://localhost:3900/book/${filter.filter}`)
+      .get(`http://localhost:3900/books/${filter.filter}`)
       .then((response) => {
         console.log(response.data);
 
         const filteredData = response.data.data.map((bookData: Books) => ({
+          id: bookData.id,
           title: bookData.title,
           author: bookData.author,
           genre: bookData.genre,
@@ -64,7 +74,7 @@ const ExploreBookCard = (filter: { filter: string }) => {
                 </p>
                 <Rating star={book.star_rating} count={book.rating_count}/>
               </div>
-              <button className="btn btn-outline-dark">Buy Now</button>
+              <button className="btn btn-outline-dark" value={book.title} onClick={handleClick}>Buy Now</button>
             </div>
           </div>
         </div>

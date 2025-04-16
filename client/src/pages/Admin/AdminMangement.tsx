@@ -1,4 +1,4 @@
-import AdminCard from "../../components/AdminCard";
+import AdminCard from "../../components/Cards/AdminCard";
 
 const AdminMangement = () => {
   return (

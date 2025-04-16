@@ -11,6 +11,7 @@ import MyOrders from "../pages/User/MyOrders";
 import MyReviews from "../pages/User/MyReviews";
 import AdminMangement from "../pages/Admin/AdminMangement";
 import PublishBookForm from "../pages/Author/PublishBook";
+import Book from "../pages/Books/Book";
 
 const router = createBrowserRouter([
   {
@@ -26,44 +27,49 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/books',
-        element: <BooksList />
+        path: "/book",
+        element: <Book />
       },
       {
-        path: '/login',
-        element: <Login />
+        path: "/books",
+        element: <BooksList />,
       },
       {
-        path: '/register',
-        element: <Register />
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: '/profile',
-        element: <Profile />
+        path: "/register",
+        element: <Register />,
       },
       {
-        path: '/my-orders',
-        element: <MyOrders />
-      },{
-        path: '/my-reviews',
-        element: <MyReviews />
+        path: "/profile",
+        element: <Profile />,
       },
       {
-        path: '/authorregister',
-        element: <AuthorRegister />
+        path: "/my-orders",
+        element: <MyOrders />,
       },
       {
-        path: '/authorLogin',
-        element: <AuthorLogin />
+        path: "/my-reviews",
+        element: <MyReviews />,
       },
       {
-        path: 'admin-management',
-        element: <AdminMangement />
-      }, 
+        path: "/authorregister",
+        element: <AuthorRegister />,
+      },
       {
-        path: '/publishbook',
-        element: <PublishBookForm />
-      }
+        path: "/authorLogin",
+        element: <AuthorLogin />,
+      },
+      {
+        path: "admin-management",
+        element: <AdminMangement />,
+      },
+      {
+        path: "/publishbook",
+        element: <PublishBookForm />,
+      },
     ],
   },
 ]);
