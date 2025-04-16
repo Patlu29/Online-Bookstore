@@ -4,12 +4,12 @@ import bcrypt from "bcrypt";
 
 const UserRepo = AppDataSource.getRepository(User);
 
-export const AllUsers = async () => {
-  const users = await UserRepo.find({where: {role: 'user'}});
+export const AllAuthors = async () => {
+  const users = await UserRepo.find({where:{role: 'author'}});
   return users;
 };
 
-export const UserRegister = async (
+export const AuthRegister = async (
   userName: string,
   email: string,
   password: string
@@ -20,7 +20,7 @@ export const UserRegister = async (
     userName,
     email,
     password: hashedPassword,
-    role: "user",
+    role: "author",
   });
   await UserRepo.save(user);
 };
