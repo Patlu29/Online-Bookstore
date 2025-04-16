@@ -1,7 +1,8 @@
 import express from "express";
 import { Request, Response } from "express";
 import { AppDataSource } from "./data-source";
-import { router } from "./routes";
+import { bookrouter } from "./routes/bookRoutes";
+import { userRouter } from "./routes/userRoutes";
 import cors = require("cors");
 
 const app: express.Application = express();
@@ -9,7 +10,8 @@ app.use(express.json());
 app.use(cors());
 
 
-app.use("/books", router);
+app.use("/books", bookrouter);
+app.use("/user", userRouter);
 
 app.get("/", (req: Request, res: Response) => {
   console.log("checking");
