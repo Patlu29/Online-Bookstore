@@ -1,18 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import profile from '../../assets/images/profile.svg'
+import profile from "../../assets/images/profile.svg";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-
-  const navigate = useNavigate()
-  const loginNavigate = () => {
-    navigate('/login')
-  }
-  const authorRegister = () => {
-    navigate('/authorregister')
-  }
-
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, []);
 
 
   return (
@@ -30,17 +28,42 @@ const Navbar = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-dark" type="submit" onClick={() => {navigate('/publishbook')}}>
+            <button
+              className="btn btn-outline-dark"
+              type="submit"
+              onClick={() => {
+                navigate("/publishbook");
+              }}
+            >
               Search
             </button>
           </form>
-
-
         </div>
         <div className="d-flex align-items-center gap-3">
-          <button className="btn btn-outline-dark" onClick={() => {navigate('/admin-management')}}>Admin Panel</button>
-          <button className="btn btn-outline-dark" onClick={authorRegister}>Publish Book</button>
-          <button className="btn btn-outline-dark" onClick={loginNavigate}>Login</button>
+          <button
+            className="btn btn-outline-dark"
+            onClick={() => {
+              navigate("/admin-management");
+            }}
+          >
+            Admin Panel
+          </button>
+          <button
+            className="btn btn-outline-dark"
+            onClick={() => {
+              navigate("/authorregister");
+            }}
+          >
+            Publish Book
+          </button>
+          {!isLoggedIn && (
+            <button
+              className="btn btn-outline-dark"
+              onClick={() => {navigate("/login"), setIsLoggedIn(true)}}
+            >
+              Login
+            </button>
+          )}
           <img
             src={profile}
             alt="Profile"

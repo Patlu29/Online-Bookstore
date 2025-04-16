@@ -10,8 +10,8 @@ const Register = () => {
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
-
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (!userName || !email || !password) {
       setError("All fields are required.");
       return;
@@ -24,13 +24,15 @@ const Register = () => {
     }
 
     try {
-      await axios.post("http://localhost:3900/auth/register", {
+      await axios.post("http://localhost:3900/user/register", {
         userName,
         email,
         password,
       });
       setSuccess("Registration successful!");
       setError("");
+      console.log("registered");
+
       setTimeout(() => {
         navigate("/login");
         alert("Successfully registered");
@@ -45,12 +47,18 @@ const Register = () => {
     <div className="container mt-5">
       <h2 className="text-center mb-4">Register</h2>
 
-      <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: "400px" }}>
+      <form
+        onSubmit={handleSubmit}
+        className="mx-auto"
+        style={{ maxWidth: "400px" }}
+      >
         {error && <div className="alert alert-danger">{error}</div>}
         {success && <div className="alert alert-success">{success}</div>}
 
         <div className="mb-3">
-          <label htmlFor="userName" className="form-label">User Name</label>
+          <label htmlFor="userName" className="form-label">
+            User Name
+          </label>
           <input
             type="text"
             className="form-control"
@@ -62,7 +70,9 @@ const Register = () => {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email address</label>
+          <label htmlFor="email" className="form-label">
+            Email address
+          </label>
           <input
             type="email"
             className="form-control"
@@ -74,7 +84,9 @@ const Register = () => {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password</label>
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
           <input
             type="password"
             className="form-control"
@@ -85,12 +97,16 @@ const Register = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary w-100">Register</button>
+        <button type="submit" className="btn btn-primary w-100">
+          Register
+        </button>
       </form>
 
       <p className="text-center mt-3">
         Already have an account?{" "}
-        <Link to="/login" className="text-decoration-none">Login here</Link>
+        <Link to="/login" className="text-decoration-none">
+          Login here
+        </Link>
       </p>
     </div>
   );

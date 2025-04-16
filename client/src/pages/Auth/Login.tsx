@@ -8,8 +8,8 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
-
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (!email || !password) {
       setError("Please fill in both email and password.");
       return;
@@ -20,24 +20,23 @@ const Login = () => {
       setError("Please enter a valid email address.");
       return;
     }
+    console.log(error);
 
     try {
+      console.log("hii");
       const loginResponse = await axios.post(
-        "http://localhost:3900/auth/login",
-        { email, password },
-        { headers: { "Content-Type": "application/json" } }
+        "http://localhost:3900/user/login",
+        { email: email, password: password }
       );
 
       const token = loginResponse.data;
       console.log(token);
 
       localStorage.setItem("token", token.token);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       setError(
-        err instanceof Error
-          ? err.message
-          : "An error occurred during login."
+        err instanceof Error ? err.message : "An error occurred during login."
       );
     }
   };
@@ -46,11 +45,15 @@ const Login = () => {
     <div className="container mt-5">
       <h2 className="text-center mb-4">Login</h2>
 
-      <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: "400px" }}>
-        {error && <div className="alert alert-danger">{error}</div>}
-
+      <form
+        onSubmit={handleSubmit}
+        className="mx-auto"
+        style={{ maxWidth: "400px" }}
+      >
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email address</label>
+          <label htmlFor="email" className="form-label">
+            Email address
+          </label>
           <input
             type="email"
             className="form-control"
@@ -62,7 +65,9 @@ const Login = () => {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password</label>
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
           <input
             type="password"
             className="form-control"
@@ -73,12 +78,16 @@ const Login = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary w-100">Login</button>
+        <button type="submit" className="btn btn-primary w-100">
+          Login
+        </button>
       </form>
 
       <p className="text-center mt-3">
         Don't have an account?
-        <Link to="/register" className="text-decoration-none">Register</Link>
+        <Link to="/register" className="text-decoration-none">
+          Register
+        </Link>
       </p>
     </div>
   );

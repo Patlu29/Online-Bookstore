@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Rating from "../../components/Rating";
+import Rating from "../../components/Reviews/Rating";
 
 interface Book {
   id: number;
@@ -72,9 +72,13 @@ const Book = () => {
                 {data.description}
               </p>
               <h4>Price: ₹{data.price}</h4>
+              <div className="d-flex justify-content-around">
+                <Rating star={data.star_rating} count={data.rating_count} />
+                <button className="btn btn-outline-dark">Buy Now</button>
+                <button className="btn btn-outline-dark">Add to Cart</button>
+              </div>
             </div>
           </div>
-          <Rating star={data.star_rating} count={data.rating_count} />
         </>
       ))}
     </div>

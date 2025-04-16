@@ -2,14 +2,15 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const location = useLocation(); // Get current route path
+  const location = useLocation();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/home");
+    window.location.reload()
   };
 
-  // Helper to check active route
+
   const isActive = (path: string) => location.pathname === path;
 
   return (

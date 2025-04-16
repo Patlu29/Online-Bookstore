@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Rating from "../Rating";
+import Rating from "../Reviews/Rating";
 import { useNavigate } from "react-router-dom";
 
 
