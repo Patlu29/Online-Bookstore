@@ -1,7 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { data, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Rating from "../../components/Reviews/Rating";
+import Reviews from "../../components/Reviews/Reviews";
+
 
 interface Book {
   id: number;
@@ -16,6 +18,7 @@ interface Book {
 }
 
 const Book = () => {
+  const navigate = useNavigate()
   const location = useLocation();
   const { title } = location.state as { title: string };
   console.log(title);
@@ -44,7 +47,6 @@ const Book = () => {
         },
       ];
       setBook(filteredData);
-      console.log("hii", filteredData);
     });
   };
 
@@ -52,7 +54,7 @@ const Book = () => {
     <div className="container text-center">
       {book.map((data) => (
         <>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center gap-5">
             <div>
               <img
                 src={data.image_url}
@@ -67,18 +69,21 @@ const Book = () => {
               <p>
                 Author: <b>{data.author}</b> | Genre: <b>{data.genre}</b>
               </p>
-              <p>
+              {/* <p>
                 <b>Description: </b>
                 {data.description}
-              </p>
+              </p> */}
               <h4>Price: ₹{data.price}</h4>
               <div className="d-flex justify-content-around">
-                <Rating star={data.star_rating} count={data.rating_count} />
-                <button className="btn btn-outline-dark">Buy Now</button>
+                <button className="btn btn-outline-dark" onClick={() => {navigate('/orderbook')}}>Buy Now</button>
                 <button className="btn btn-outline-dark">Add to Cart</button>
               </div>
             </div>
           </div>
+          <div className="d-flex justify-content-around p-3">
+            <Rating star={data.star_rating} count={data.rating_count} />
+          </div>
+          <Reviews title={data.title}/>
         </>
       ))}
     </div>

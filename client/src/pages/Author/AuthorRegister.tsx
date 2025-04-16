@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const AuthorRegister = () => {
-  const [authorName, setAuthorName] = useState("");
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   // const [genre, setGenre] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +14,7 @@ const AuthorRegister = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 e.preventDefault()
-    if (!authorName || !email || !password) {
+    if (!userName || !email || !password) {
       setError("Name, email and password are required.");
       return;
     }
@@ -27,7 +27,7 @@ e.preventDefault()
 
     try {
       await axios.post("http://localhost:3900/author/register", {
-        authorName,
+        userName,
         email,
         // genre,
         password,
@@ -60,8 +60,8 @@ e.preventDefault()
             type="text"
             className="form-control"
             placeholder="Enter full name"
-            value={authorName}
-            onChange={(e) => setAuthorName(e.target.value)}
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
             required
           />
         </div>

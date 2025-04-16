@@ -29,14 +29,15 @@ e.preventDefault()
       );
 
       const token = loginResponse.data;
-      console.log(token);
+      console.log(token, "login tokeen");
+
 
       localStorage.setItem("token", token.token);
-      navigate("/profile");
+      navigate("/publishbook");
     } catch (err) {
       setError(
         err instanceof Error
-          ? err.message
+          ? "author not found"
           : "An error occurred during author login."
       );
     }
